@@ -7,26 +7,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 
     <script>
+        var divs
+        var speed = 0
         function getMatrix() {
-            const divs = document.querySelectorAll("td")
+            divs = document.querySelectorAll("td")
             const arr = [];
             for (let i = 0; i < 9; i++) {
                 const c = []
                 for (let j = 0; j < 9; j++) {
-                    c.push(divs[i*9 + j].innerText ? +(divs[i*9 + j].innerText) : 0)
+                    c.push(divs[i * 9 + j].innerText ? +(divs[i * 9 + j].innerText) : 0)
                 }
                 arr.push(c)
-                
+
             }
             return arr
         }
 
         function setMatrix(matrix) {
-            const divs = document.querySelectorAll("td")
-
             for (let i = 0; i < 9; i++) {
                 for (let j = 0; j < 9; j++) {
-                    divs[i*9 + j].innerText = matrix[i][j]? matrix[i][j] : ""
+                    divs[i * 9 + j].innerText = matrix[i][j] ? matrix[i][j] : ""
                 }
             }
         }
@@ -76,7 +76,11 @@
             return null
         }
 
-        function recur(board) {
+        function sleep(milliseconds) {
+            return new Promise(resolve => setTimeout(resolve, milliseconds))
+        }
+
+        async function recur(board) {
             const v = free_slot(board)
             if (v === null) {
                 return true
@@ -88,7 +92,12 @@
             for (let n = 1; n <= 9; n++) {
                 if (is_valid_cross(board, y, x, n) && is_valid_square(board, y, x, n)) {
                     board[y][x] = n
-                    if (recur(board)) {
+                    if (speed != 0){
+                        setTimeout(() => setMatrix(board), 0)
+                        await sleep(speed)
+                    }
+
+                    if (await recur(board)) {
                         return true
                     }
 
@@ -100,14 +109,18 @@
 
         }
 
-        function solve() {
+        async function solve() {
+            speed = +document.getElementById("speed").value
+            console.log(speed)
             const board = getMatrix();
-            recur(board);
-            setMatrix(board)
+            await recur(board);
+            if (speed == 0) {
+                setMatrix(board)
+            }
         }
 
         function clean() {
-            document.querySelectorAll("td").forEach((e) => e.innerText = "")
+            window.location.reload()
         }
 
         async function example() {
@@ -254,12 +267,16 @@
                             <td contenteditable="true">5
         </table>
         <br>
-        <div style="display: flex; flex-direction: column; max-width: 300px; margin: auto; ">
+        <div style="display: flex; flex-direction: column; max-width: 400px; margin: auto; ">
             <div style="display: flex; flex-direction: row;">
                 <button onclick="solve()" style="margin: 10px;">Solve</button>
                 <button onclick="clean()" style="margin: 10px;">Reset</button>
             </div>
             <button onclick="example()" style="margin: auto; max-width: fit-content; ">Example Board</button>
+            <div class="container">
+                <label for="speed">Proccessing Speed (in milliseconds)</label>
+                <input type="number" name="speed" id="speed" value="0">
+            </div>
         </div>
 
     </div>
