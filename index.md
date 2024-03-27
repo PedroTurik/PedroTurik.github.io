@@ -16,4 +16,4 @@ layout: default
 
 {% include 05-emphasis.md %}
 
-you can [download pdf](https://belovanna.github.io/assets/mydoc.pdf) here.
+you can [download pdf](https://pedroturik.github.io/pdfs/resume.pdf) here.
