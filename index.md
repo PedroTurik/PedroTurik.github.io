@@ -17,4 +17,4 @@ layout: default
 {% include 05-emphasis.md %}
 
 
-<object data="{{ site.url }}{{ site.baseurl }}/_pdfs/resume.pdf" width="1000" height="1000" type="application/pdf"></object>
+<object data="{{ site.url }}{{ site.baseurl }}/_pdfs/Resume.pdf" width="1000" height="1000" type="application/pdf"></object>
