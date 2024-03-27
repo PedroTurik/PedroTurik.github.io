@@ -2,7 +2,7 @@
 This is a non-exhaustive list of some personal projects I managed to put together in my free time and actually finish. All of them were made for studying porpuses.
 
 ### [Loxide](https://github.com/PedroTurik/lox-rs)
-A fast **Rust** implementation of the **Lox Language** (see [Crafting Interpreters](https://craftinginterpreters.com/)). Heavylly inspired by the books design, but many changes were made to avoid unecessary dynamic dispatch and other indirections. This project was the most fun to do out of all
+A fast **Rust** implementation of the **Lox Language** (see [Crafting Interpreters](https://craftinginterpreters.com/)). Heavily inspired by the books design, but many changes were made to avoid unecessary dynamic dispatch and other indirections. This project was the most fun to do out of all
 
 ### [Smart Finder](https://github.com/PedroTurik/SmartFinder)
 A **Pygame** project that showcases some common *Search Algorithms* in a very simple interface that allows the creation of walls, and random generation of a Maze.
