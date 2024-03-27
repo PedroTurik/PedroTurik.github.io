@@ -2,12 +2,7 @@
 layout: default
 ---
 
-{% include 01-name.md %}
-
+{% include 01-links.md %}
 <br>
+{% include 02-projects.md %}
 
-{% include 03-links.md %}
-
-<br>
-
-{% include 04-lists.md %}
