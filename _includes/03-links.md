@@ -1,5 +1,5 @@
-[Portfolio](https://malgorzatapick.eu/)
+[Resume](https://pedroturik.github.io/pdfs/resume.pdf)
 
-[GitHub](http://github.com/gosiacodes)
+[GitHub](https://github.com/PedroTurik)
 
-[LinkedIn](https://www.linkedin.com/in/malgorzatapick/)
+[LinkedIn](https://www.linkedin.com/in/pedro-turik-firmino/) *currently only in portuguese*
