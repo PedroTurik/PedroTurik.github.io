@@ -15,3 +15,5 @@ layout: default
 <br>
 
 {% include 05-emphasis.md %}
+
+you can [download pdf](https://belovanna.github.io/assets/mydoc.pdf) here.
