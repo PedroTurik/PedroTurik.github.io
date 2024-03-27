@@ -15,5 +15,3 @@ layout: default
 <br>
 
 {% include 05-emphasis.md %}
-
-you can [download pdf](https://pedroturik.github.io/pdfs/resume.pdf) here.
